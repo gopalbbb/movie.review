@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head> 
+    <title>Add user</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+		*{
+			box-sizing: border-box;
+			margin:0;
+			padding: 0;
+		}
+		
+	.form-box{
+		border:none;
+		width: 350px;
+		height: 400px;
+		margin: 20px auto;
+		display: flex;
+		flex-direction: column;
+	}
+	.input{
+		width: 280px;
+		height: 35px;
+		margin:auto;
+		border-radius: 5px;
+	}
+	.submit{
+		width: 220px;
+		height: 35px;
+        margin:auto;
+        border-radius: 5px;
+        background-color: blue;
+        color: white;
+    }
+	
+	.title{
+		width: fit-content;
+		margin:auto;
+		padding-top: 100px;
+	}
+	
+	</style>
+</head>
+
+<body>
+    <h1 class="title"> Add user </h1>
+    <div>
+		<form class="form-box" method="post" th:action="@{/movies/review}">
+		<div th:if="${errormsg !=null && errormsg.size <0}">
+		<ul>
+		<li th:each="error:${errormsg}" th:text="${error}"></li>
+		
+		
+		</ul>
+		
+		
+		
+		
+		</div>
+			
+			<input class="input" type="text" id="Comment" name="comment" placeholder=" Add your comment"  value="" required="required"><br/>
+			<input class="input" max="10" min="1" type="number" id="rating" name="rating_Score" placeholder=" Your Score"  value=""required="required"><br/>
+			
+			<select name="movie_id"required="required">
+				<option value="">Select Movie </option>
+				<option th:each="movie: ${movies}" th:value="${movie.movieId}" th:text="${movie.movieName}"></option>
+				<br/>
+			</select>
+			<select name="user_id" required="required">
+				<option value="">Select User</option>
+				<option th:each="user: ${users}" th:value="${user.userId}" th:text="${user.userName}"></option>
+				
+			</select>
+			
+			
+			<input class="submit" type="submit" value="Submit">
+		</form>
+		
+	</div>
+</body>
+
+</html>

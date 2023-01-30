@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head> 
+    <title>Login Page</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+		*{
+			box-sizing: border-box;
+			margin:0;
+			padding: 0;
+		}
+		
+	.form-box{
+		border:none;
+		width: 350px;
+		height: 400px;
+		margin: 20px auto;
+		display: flex;
+		flex-direction: column;
+	}
+	.input{
+		width: 280px;
+		height: 35px;
+		margin:auto;
+		border-radius: 5px;
+	}
+	.submit{
+		width: 220px;
+		height: 35px;
+        margin:auto;
+        border-radius: 5px;
+        background-color: blue;
+        color: white;
+    }
+	
+	.title{
+		width: fit-content;
+		margin:auto;
+		padding-top: 100px;
+	}
+	
+	</style>
+</head>
+
+<body>
+    <h1 class="title"> Add Movies </h1>
+    <div>
+		<form class="form-box" method="post" th:action="@{/movies/create}">
+			<input class="input" type="text" id="movie_name" name="movie_name" placeholder="       Enter Movie Name"  value=""><br/>
+			
+			<input class="input" type="date" id="realease_date" name="release_date"  value=""><br/>
+			
+			<input class="submit" type="submit" value="Add">
+		</form>
+	</div>
+</body>
+
+</html>
