@@ -47,7 +47,7 @@
     <h1 class="title"> Add user </h1>
     <div>
 		<form class="form-box" method="post" th:action="@{/movies/review}">
-		<div th:if="${errormsg !=null && errormsg.size <0}">
+		<div th:if="${errormsg !=null && errormsg.size >0}">
 		<ul>
 		<li th:each="error:${errormsg}" th:text="${error}"></li>
 		
@@ -59,8 +59,8 @@
 		
 		</div>
 			
-			<input class="input" type="text" id="Comment" name="comment" placeholder=" Add your comment"  value="" required="required"><br/>
-			<input class="input" max="10" min="1" type="number" id="rating" name="rating_Score" placeholder=" Your Score"  value=""required="required"><br/>
+			<input class="input" type="text" id="Comment" name="comment" placeholder=" Add your comment"  th:value="${comment}" required="required"><br/>
+			<input class="input" max="10" min="1" type="number" id="rating" name="rating_Score" placeholder=" Your Score"  th:value="${rating_Score}"required="required"><br/>
 			
 			<select name="movie_id"required="required">
 				<option value="">Select Movie </option>

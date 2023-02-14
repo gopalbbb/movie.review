@@ -46,10 +46,15 @@
 <body>
     <h1 class="title"> Add user </h1>
     <div>
-		<form class="form-box" method="post" th:action="@{/movies/addUser}">
-			<input class="input" type="text" id="movie_name" name="user_name" placeholder=" Enter Movie Name"  value=""><br/>
+		<form class="form-box" method="post" th:action="@{/user/addUser}">
+			<input class="input" type="text" id="movie_name" name="user_name" placeholder=" Enter User Name"  value=""><br/>
 			<input class="input" type="text" id="movie_name" name="address" placeholder=" User Address"  value=""><br/>
 			<input class="input" type="phone" id="phon number" name="contact_number" placeholder=" contact number"  value=""><br/>
+			<input class="input" type="password" id="password" name="password" placeholder=" password"  value=""><br/>
+			<input class="input" type="text" id="movie_name" name="email" placeholder=" mail"  value=""><br/>
+			 <input class="input" type="text" id="role" name="role" placeholder=" role"  value=""><br/> 
+			<!-- <input class="input" type="number" id="movie_name" name="generated_otp_code" placeholder=" otp number"  value=""><br/>
+			<input class="input" type="number" id="movie_name" name="validated_otp" placeholder=" otp number"  value=""><br/>  -->
 			
 			
 			

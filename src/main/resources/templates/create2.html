@@ -44,12 +44,18 @@
 </head>
 
 <body>
-    <h1 class="title"> Add Movies </h1>
+    <h1 class="title"> Person details </h1>
     <div>
 		<form class="form-box" method="POST" enctype="multipart/form-data" th:action="@{/movies/create}">
-			<input class="input" type="text" id="movie_name" name="movie_name" placeholder="       Enter Movie Name"  value=""><br/>
+			<input class="input" type="text" id="movie_name" name="first_name" placeholder="       Enter First Name"  value=""><br/>
 			
-			<input class="input" type="date" id="realease_date" name="release_date"  value=""><br/>
+			<input class="input" type="text" id="movie_name" name="last_name" placeholder="       Enter last Name"  value=""><br/>
+			<input class="input" type="text" id="movie_name" name="gender" placeholder="       gender"  value=""><br/>
+			<input class="input" type="number" id="movie_name" name="education" placeholder="      education detaols"  value=""><br/>
+			<input class="input" type="email" id="movie_name" name="email" placeholder="       email"  value=""><br/>
+			<input class="input" type="text" id="movie_name" name="skill" placeholder="       specific skill"  value=""><br/>
+			<input class="input" type="date" id="movie_name" name="dob" placeholder="       Date of birth"  value=""><br/>
+			
 			<input type="file" class="form-control" placeholder="Upload image" name="image" id="image" required="required">
 			
 			<input class="submit" type="submit" value="Add">

@@ -51,12 +51,15 @@ public class ReviewController {
 		error.add("comment can't be empty or null");
 	
 	}else if(rating_Score == null||rating_Score <1 || rating_Score >10) {
-		error.add("rating most between 1 up to 10");
+		error.add("rating score most between 1 up to 10");
 		}
 	if(error.size()>0) {
 		model.addAttribute("errormsg",error);
 		List<Movies>movies=moviesService.viewAllmovies();
 		model.addAttribute("movies",movies);
+		model.addAttribute("comment",comment);
+		model.addAttribute("rating_Score",rating_Score);
+		
 		List<User>users=userService.viewAlluser();
 		model.addAttribute("users",users);
 		return"review";

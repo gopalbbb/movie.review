@@ -12,12 +12,19 @@
     		<th>ID</th>
     		<th>Movie Name</th>
     		<th>Release Date</th>
+    		<th>Image</th>
     		
     	</tr>
     	<tr th:each="movies: ${movies}" >
     		<td><span th:text="${movies.movieId}"></span></td>
     		<td th:text="${movies.movieName}"></td>
     		<td th:text="${movies.releaseDate}"></td>
+    		  <tbody th:with="count=0">
+        <tr th:each = "movie, hh : ${images}">           
+                <td th:with="count=${count + 1}" th:text="${count}"></td>
+     
+                <td><img th:src="@{${'/list'+ movie.movie_id}}" 
+                class="card img-fluid" style="width:300px" alt=""/></td>
     		
     	
     	</tr>
